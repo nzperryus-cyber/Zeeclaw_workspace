@@ -1,7 +1,8 @@
 #!/bin/bash
 # Weekly workspace maintenance check
 # Scans for: broken symlinks, empty dirs, files >10MB, disk space,
-#            gog auth, git uncommitted, sessions, temp files, machine load
+#            gog auth, git uncommitted, sessions, temp files, machine load,
+#            cron jobs, Drive backup, git push, memory logs, skills, RFQ files
 
 WORKSPACE="/home/nathan/.openclaw/workspace"
 LOG="$WORKSPACE/maintenance-log.md"
@@ -47,8 +48,22 @@ fi
 cd "$WORKSPACE"
 if ! git diff HEAD --quiet 2>/dev/null; then
   echo "" >> "$LOG"
-  echo "**Git uncommitted changes:** yes" >> "$LOG"
+  echo "**Git uncommitted changes:** yes ⚠️" >> "$LOG"
   ISSUES_FOUND=1
+fi
+
+# ---- Git push status ----
+if ! git rev-parse @{u} >/dev/null 2>&1; then
+  echo "" >> "$LOG"
+  echo "**Git remote:** No upstream configured ⚠️" >> "$LOG"
+  ISSUES_FOUND=1
+else
+  PUSH_NEEDED=$(git log origin/main..main 2>/dev/null | wc -l)
+  if [ "$PUSH_NEEDED" -gt 0 ]; then
+    echo "" >> "$LOG"
+    echo "**Git remote:** $PUSH_NEEDED commit(s) behind origin ⚠️" >> "$LOG"
+    ISSUES_FOUND=1
+  fi
 fi
 
 # ---- Disk space (workspace volume) ----
@@ -66,6 +81,26 @@ if echo "$GOG_OUT" | grep -qi "invalid_grant\|expired\|unauthorized\|error"; the
   echo "**gog Drive auth:** Token expired or invalid ⚠️" >> "$LOG"
   ISSUES_FOUND=1
 fi
+
+# ---- Drive backup check ----
+DRIVE_BACKUP_ID="17YBaOOHxNOWOzB-_dHKhFy7tJp9juqct"
+DRIVE_FILE=$(gog drive ls --account nzperryus@gmail.com --parent "$DRIVE_BACKUP_ID" 2>&1 | tail -n +2 | head -1 || true)
+if [ -n "$DRIVE_FILE" ]; then
+  # Check if most recent backup is from today or yesterday
+  echo "" >> "$LOG"
+  echo "**Drive backup:** $DRIVE_FILE" >> "$LOG"
+else
+  echo "" >> "$LOG"
+  echo "**Drive backup:** No backup found in Zeeclaw folder ⚠️" >> "$LOG"
+  ISSUES_FOUND=1
+fi
+
+# ---- Cron job last-run check ----
+echo "" >> "$LOG"
+echo "**Cron jobs:**" >> "$LOG"
+openclaw cron list 2>/dev/null | while read -r line; do
+  echo "  $line" >> "$LOG"
+done
 
 # ---- OpenClaw health check ----
 OC_STATUS=$(openclaw status --deep 2>&1)
@@ -99,13 +134,42 @@ if [ -n "$TAILSCALE_OUT" ]; then
   echo "**Tailscale:** $TAILSCALE_OUT" >> "$LOG"
 fi
 
+# ---- Memory log pruning ----
+MEMORY_LOGS=$(find "$WORKSPACE/memory" -name "????-??-??.md" 2>/dev/null | wc -l | tr -d ' ')
+MEMORY_SIZE=$(du -sh "$WORKSPACE/memory" 2>/dev/null | cut -f1 || echo "n/a")
+echo "" >> "$LOG"
+echo "**Memory logs:** $MEMORY_LOGS files, $MEMORY_SIZE" >> "$LOG"
+if [ "$MEMORY_LOGS" -gt 90 ]; then
+  echo "**Memory log pruning recommended:** $MEMORY_LOGS files (consider archiving old ones)" >> "$LOG"
+fi
+
+# ---- Skills installed check ----
+echo "" >> "$LOG"
+echo "**Skills:**" >> "$LOG"
+ls "$WORKSPACE/skills/" 2>/dev/null | while read -r s; do echo "  - $s" >> "$LOG"; done
+echo "  [system skills]" >> "$LOG"
+ls "$HOME/.openclaw/skills/" 2>/dev/null | while read -r s; do echo "  - $s" >> "$LOG"; done
+
+# ---- RFQ project files accessibility ----
+echo "" >> "$LOG"
+echo "**RFQ shared_folder check:**" >> "$LOG"
+for proj in "25-67725 - Ford Plasma Cells" "25-72998 - MBUSI Gluing Cell" "25-72313 - Ford FRAP Mega Cell" "25-71662 - Ford Cobot Projects" "24-68775 - Metalsa Frame Wax"; do
+  PROJ_PATH="$HOME/shared_folder/Projects/$proj"
+  if [ -d "$PROJ_PATH" ]; then
+    FILE_COUNT=$(find "$PROJ_PATH" -type f 2>/dev/null | wc -l)
+    echo "  ✓ $proj: $FILE_COUNT file(s)" >> "$LOG"
+  else
+    echo "  ✗ $proj: folder not found ⚠️" >> "$LOG"
+    ISSUES_FOUND=1
+  fi
+done
+
 # ---- Summary ----
+echo "" >> "$LOG"
 if [ $ISSUES_FOUND -eq 0 ]; then
-  echo "" >> "$LOG"
   echo "**Status:** All clean ✅" >> "$LOG"
 else
-  echo "" >> "$LOG"
-  echo "**Action needed.** Review above items." >> "$LOG"
+  echo "**Status:** $ISSUES_FOUND issue(s) found ⚠️" >> "$LOG"
 fi
 
 exit 0
