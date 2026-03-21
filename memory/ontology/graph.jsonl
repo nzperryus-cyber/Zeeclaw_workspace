@@ -52,3 +52,5 @@
 {"op": "update", "id": "amy_perry", "properties": {"birthday": "March 14, 1975", "birthday_parsed": "1975-03-14"}, "timestamp": "2026-03-21T02:57:17.767953+00:00"}
 {"op": "update", "id": "zander_perry", "properties": {"birthday": "September 12, 2018", "birthday_parsed": "2018-09-12", "age": 7}, "timestamp": "2026-03-21T02:57:17.812036+00:00"}
 {"op": "update", "id": "zella_perry", "properties": {"birthday": "October 25, 2007", "birthday_parsed": "2007-10-25", "age": 18}, "timestamp": "2026-03-21T02:57:17.857974+00:00"}
+{"op": "create", "entity": {"id": "sheila_tutor", "type": "Person", "properties": {"name": "Mrs. Sheila", "relation": "Zander's tutor", "age": ""}, "created": "2026-03-21T02:57:52.072586+00:00", "updated": "2026-03-21T02:57:52.072586+00:00"}, "timestamp": "2026-03-21T02:57:52.072586+00:00"}
+{"op": "relate", "from": "zander_perry", "rel": "has_tutor", "to": "sheila_tutor", "properties": {}, "timestamp": "2026-03-21T02:57:52.115808+00:00"}
