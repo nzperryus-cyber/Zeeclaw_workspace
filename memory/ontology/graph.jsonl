@@ -54,3 +54,5 @@
 {"op": "update", "id": "zella_perry", "properties": {"birthday": "October 25, 2007", "birthday_parsed": "2007-10-25", "age": 18}, "timestamp": "2026-03-21T02:57:17.857974+00:00"}
 {"op": "create", "entity": {"id": "sheila_tutor", "type": "Person", "properties": {"name": "Mrs. Sheila", "relation": "Zander's tutor", "age": ""}, "created": "2026-03-21T02:57:52.072586+00:00", "updated": "2026-03-21T02:57:52.072586+00:00"}, "timestamp": "2026-03-21T02:57:52.072586+00:00"}
 {"op": "relate", "from": "zander_perry", "rel": "has_tutor", "to": "sheila_tutor", "properties": {}, "timestamp": "2026-03-21T02:57:52.115808+00:00"}
+{"op": "create", "entity": {"id": "stan", "type": "Person", "properties": {"name": "Stan", "relation": "dog", "breed": "Maltipoo", "hobbies": "fetch, apple", "age": 3, "birthday": "Halloween", "birthday_parsed": "2023-10-31"}, "created": "2026-03-21T03:00:04.869202+00:00", "updated": "2026-03-21T03:00:04.869202+00:00"}, "timestamp": "2026-03-21T03:00:04.869202+00:00"}
+{"op": "relate", "from": "nathan_perry", "rel": "has_pet", "to": "stan", "properties": {}, "timestamp": "2026-03-21T03:00:04.915020+00:00"}
