@@ -40,6 +40,23 @@ if [ -n "$BIG_FILES" ]; then
   ISSUES_FOUND=1
 fi
 
+# OpenClaw health check
+OC_STATUS=$(openclaw status --deep 2>&1)
+OC_CRITICAL=$(echo "$OC_STATUS" | grep -c "CRITICAL" || true)
+OC_WARNS=$(echo "$OC_STATUS" | grep -c "WARN" || true)
+
+if [ "$OC_CRITICAL" -gt 0 ]; then
+  echo "" >> "$LOG"
+  echo "**OpenClaw Critical Issues:**" >> "$LOG"
+  echo "$OC_STATUS" | grep -A2 "CRITICAL" | while read -r line; do echo "  $line" >> "$LOG"; done
+  ISSUES_FOUND=1
+fi
+
+if [ "$OC_WARNS" -gt 0 ]; then
+  echo "" >> "$LOG"
+  echo "**OpenClaw Warnings:** $OC_WARNS warning(s)" >> "$LOG"
+fi
+
 if [ $ISSUES_FOUND -eq 0 ]; then
   echo "**Status:** All clean ✅" >> "$LOG"
 else
