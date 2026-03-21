@@ -43,3 +43,23 @@ Docker build fails on Apple Silicon due to platform mismatch
 
 ---
 
+
+## [LRN-TEST-001] insight
+
+**Logged**: 2026-03-20T10:00:00Z
+**Priority**: medium
+**Status**: pending
+**Area**: config
+
+### Summary
+Nathan prefers concise responses without summaries at the end
+
+## [LRN-TEST-001] insight
+
+**Logged**: 2026-03-20T10:00:00Z
+**Priority**: medium
+**Status**: pending
+**Area**: config
+
+### Summary
+Nathan prefers concise responses without summaries at the end
