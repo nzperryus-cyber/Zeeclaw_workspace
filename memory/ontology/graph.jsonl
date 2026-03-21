@@ -49,3 +49,6 @@
 {"op": "relate", "from": "nathan_perry", "rel": "works_with", "to": "erwin_jr", "properties": {}, "timestamp": "2026-03-21T02:56:08.097850+00:00"}
 {"op": "relate", "from": "nathan_perry", "rel": "works_with", "to": "paul_jr", "properties": {}, "timestamp": "2026-03-21T02:56:08.143143+00:00"}
 {"op": "relate", "from": "nathan_perry", "rel": "works_with", "to": "keith_jr", "properties": {}, "timestamp": "2026-03-21T02:56:08.187560+00:00"}
+{"op": "update", "id": "amy_perry", "properties": {"birthday": "March 14, 1975", "birthday_parsed": "1975-03-14"}, "timestamp": "2026-03-21T02:57:17.767953+00:00"}
+{"op": "update", "id": "zander_perry", "properties": {"birthday": "September 12, 2018", "birthday_parsed": "2018-09-12", "age": 7}, "timestamp": "2026-03-21T02:57:17.812036+00:00"}
+{"op": "update", "id": "zella_perry", "properties": {"birthday": "October 25, 2007", "birthday_parsed": "2007-10-25", "age": 18}, "timestamp": "2026-03-21T02:57:17.857974+00:00"}
