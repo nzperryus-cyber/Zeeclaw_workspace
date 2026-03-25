@@ -1,58 +1,92 @@
 #!/bin/bash
 # Morning briefing — weekday 7am ET
+# Projects: ~/.openclaw/workspace/projects/{id}/meta.md
 
 WORKSPACE="/home/nathan/.openclaw/workspace"
 cd "$WORKSPACE" || exit 1
 
-# Load project data
-source "$WORKSPACE/.projects.env" 2>/dev/null
+TELEGRAM_BOT_TOKEN="${TELEGRAM_BOT_TOKEN:-$(grep TELEGRAM_BOT_TOKEN ~/.zeeclaw/credentials.json 2>/dev/null | cut -d'"' -f4)}"
+TELEGRAM_CHAT_ID="${TELEGRAM_CHAT_ID:-8264918962}"
 
 TODAY=$(date '+%Y-%m-%d')
-THREE_DAYS=$(date -d "+3 days" '+%Y-%m-%d' 2>/dev/null || date -v+3d '+%Y-%m-%d')
-YESTERDAY=$(date -d "yesterday" '+%Y-%m-%d' 2>/dev/null || date -v-1d '+%Y-%m-%d')
+NOW_EPOCH=$(date '+%s')
+THREE_DAYS_EPOCH=$((NOW_EPOCH + 259200))
 
 MSG=""
-
-# Check projects due in next 3 days or today
-DUE_SOON=$(grep -l "due $TODAY\|due $THREE_DAYS\|due $(date -d "+1 day" '+%Y-%m-%d' 2>/dev/null || date -v+1d '+%Y-%m-%d')\|due $(date -d "+2 days" '+%Y-%m-%d' 2>/dev/null || date -v+2d '+%Y-%m-%d')" projects/*.md 2>/dev/null | head -5)
-if [ -n "$DUE_SOON" ]; then
-  for f in $DUE_SOON; do
-    PROJ=$(basename "$f" .md)
-    DUE=$(grep "^due:" "$f" 2>/dev/null || grep "due " "$f" | head -1)
-    DESC=$(grep "^description:" "$f" 2>/dev/null || grep "^- " "$f" | head -1)
-    MSG="$MSG\n• $PROJ: $DESC (DUE: $DUE)"
-  done
-fi
-
-# Check stale sent quotes (14+ days old)
+URGENT=""
 STALE=""
-for f in projects/*.md 2>/dev/null; do
-  [ -f "$f" ] || continue
-  if grep -q "status: sent" "$f"; then
-    SENT_DATE=$(grep "^sent:" "$f" 2>/dev/null | cut -d' ' -f2)
-    [ -z "$SENT_DATE" ] && continue
-    SENT_EPOCH=$(date -d "$SENT_DATE" '+%s' 2>/dev/null || echo 0)
-    NOW_EPOCH=$(date '+%s')
-    DAYS=$(( (NOW_EPOCH - SENT_EPOCH) / 86400 ))
-    if [ "$DAYS" -ge 14 ]; then
-      PROJ=$(basename "$f" .md)
-      STALE="$STALE\n• $PROJ — ${DAYS}d since sent"
+
+# Check each project meta.md
+for metafile in projects/*/meta.md; do
+  [ -f "$metafile" ] || continue
+  PROJ=$(basename $(dirname "$metafile"))
+  
+  # Parse status
+  STATUS=$(grep "^\- \*\*Status:\*\*" "$metafile" 2>/dev/null | sed 's/.*\*\*Status:\*\* //' | sed 's/ //g' | tr '[:upper:]' '[:lower:]')
+  
+  # Parse due date
+  DUE_STR=$(grep "^\- \*\*Due date:\*\*" "$metafile" 2>/dev/null | sed 's/.*\*\*Due date:\*\* //' | sed 's/ //g')
+  if [ -n "$DUE_STR" ]; then
+    DUE_EPOCH=$(date -d "$DUE_STR" '+%s' 2>/dev/null || echo 0)
+  else
+    DUE_EPOCH=0
+  fi
+  
+  # Parse sent date for stale calc
+  SENT_STR=$(grep "^\- \*\*Sent date:\*\*" "$metafile" 2>/dev/null | sed 's/.*\*\*Sent date:\*\* //' | sed 's/ //g')
+  if [ -n "$SENT_STR" ]; then
+    SENT_EPOCH=$(date -d "$SENT_STR" '+%s' 2>/dev/null || echo 0)
+    DAYS_SENT=$(( (NOW_EPOCH - SENT_EPOCH) / 86400 ))
+  else
+    DAYS_SENT=0
+  fi
+  
+  # Customer and desc from index if available
+  CUSTOMER=$(grep "^| $PROJ |" projects/index.md 2>/dev/null | awk -F'|' '{print $3}' | sed 's/^ *//;s/ *$//')
+  DESC=$(grep "^| $PROJ |" projects/index.md 2>/dev/null | awk -F'|' '{print $4}' | sed 's/^ *//;s/ *$//')
+  
+  # Due soon (within 3 days)
+  if [ "$DUE_EPOCH" -gt 0 ] && [ "$DUE_EPOCH" -le "$THREE_DAYS_EPOCH" ]; then
+    DUE_DISP=$(date -d "$DUE_STR" '+%m/%d' 2>/dev/null || echo "$DUE_STR")
+    if [ "$DUE_EPOCH" -lt "$NOW_EPOCH" ]; then
+      URGENT="$URGENT\n• $PROJ — $CUSTOMER — **OVERDUE ($DUE_DISP)**"
+    else
+      URGENT="$URGENT\n• $PROJ — $CUSTOMER — due $DUE_DISP"
     fi
   fi
+  
+  # Stale (sent 14+ days ago)
+  if [ "$STATUS" = "sent" ] && [ "$DAYS_SENT" -ge 14 ]; then
+    STALE="$STALE\n• $PROJ — $CUSTOMER — ${DAYS_SENT}d since sent"
+  fi
 done
+
+# Weather
+WEATHER=$(curl -s "wttr.in/Greensboro?format=%c+%t,+%w+wind&u" 2>/dev/null | tr -d '\n')
+if [ -z "$WEATHER" ] || [ "$WEATHER" = " " ]; then
+  WEATHER="unavailable"
+fi
+
+# Build message
+if [ -n "$URGENT" ]; then
+  MSG="**Due soon:**$URGENT"
+fi
+
 if [ -n "$STALE" ]; then
   MSG="$MSG\n\n**Stale quotes (14+ days):**$STALE"
 fi
 
-# Weather
-WEATHER=$(curl -s "wttr.in/Greensboro?format=%c+%t,+%w+wind&u" 2>/dev/null | tr -d '\n')
-if [ -n "$WEATHER" ]; then
-  MSG="$MSG\n\n**Greensboro:** $WEATHER"
+MSG="$MSG\n\n**Weather:** $WEATHER"
+
+# Send
+if [ -z "$TELEGRAM_BOT_TOKEN" ]; then
+  echo -e "Good morning.\n$MSG"
+  exit 0
 fi
 
-# Final output
-if [ -z "$MSG" ]; then
-  echo "Clear board. Good morning."
-else
-  echo -e "Good morning. Here's what matters:\n$MSG"
-fi
+curl -s -X POST "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage" \
+  -d "chat_id=$TELEGRAM_CHAT_ID" \
+  -d "text=$(echo -e "Good morning.\n$MSG" | sed 's/\\n/ /g')" \
+  -d "parse_mode=Markdown" > /dev/null 2>&1
+
+echo "Morning brief sent at $(date)"
