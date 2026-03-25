@@ -43,22 +43,9 @@ _Curated facts about Nathan, his family, work, and preferences. Updated regularl
 
 ---
 
-## Work — Active Projects
-
-Always use this format when listing projects:
-`• [Project #] — [Customer] — [Description] — [Status with rev #] — [due date OR sent date]`
-
-- **25-71662** — Ford — cobot project — quoting rev 0 — due 3/23/26
-- **25-73050** — Stellantis — TNAP glass cell kits — sent rev 0 — 3/6/26
-- **25-72998** — MBUSI — 6 Gluing Cells — quoting rev 1 — due 3/27/26
-- **25-72313** — Ford — FRAP Mega Sealer — awarded — sent rev 0 — 3/9/26
-- **25-67725** — Ford — Plasma — rev — rev 1 sent 3/19/26 (due 3/23/26)
-
----
-
 ## Preferences & Notes
 
-- **Project list format:** always stop Nathan if it doesn't match: `• [Project #] — [Customer] — [Description] — [Status with rev #] — [due date OR sent date]`
+- **Project list:** stored in `projects/index.md` — always use this format when listing: `• [Project #] — [Customer] — [Description] — [Status with rev #] — [due date OR sent date]`
 - **Weather:** always use `&u` for US units (°F, mph)
 - **Key client:** Ford (VOSS standards)
 
