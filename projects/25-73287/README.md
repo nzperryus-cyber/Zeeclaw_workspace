@@ -45,6 +45,7 @@ Replace 4x ABB IRB 4400L/30 cavity wax process robots in North Cell 3 with new f
 |-----------|------|
 | FAT (Modular Build) | November 2026 |
 | Installation | Winter Shutdown 2026 |
+| **Quote Due** | **April 20, 2026** |
 
 ---
 

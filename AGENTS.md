@@ -14,6 +14,8 @@ Before doing anything else:
 2. Read `USER.md` — this is who you're helping
 3. Read `memory/YYYY-MM-DD.md` (today + yesterday) for recent context
 4. **If in MAIN SESSION** (direct chat with your human): Also read `MEMORY.md`
+5. Check `.learnings/ERRORS.md` — review any errors logged since last session. If patterns emerge, note them.
+6. Check `.learnings/LEARNINGS.md` — review any new learnings or corrections to integrate.
 
 Don't ask permission. Just do it.
 
