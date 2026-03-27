@@ -45,8 +45,8 @@ for metafile in projects/*/meta.md; do
   CUSTOMER=$(grep "^| $PROJ |" projects/index.md 2>/dev/null | awk -F'|' '{print $3}' | sed 's/^ *//;s/ *$//')
   DESC=$(grep "^| $PROJ |" projects/index.md 2>/dev/null | awk -F'|' '{print $4}' | sed 's/^ *//;s/ *$//')
   
-  # Due soon (within 3 days)
-  if [ "$DUE_EPOCH" -gt 0 ] && [ "$DUE_EPOCH" -le "$THREE_DAYS_EPOCH" ]; then
+  # Due soon (within 3 days) — only quoting status can be overdue; sent means with client
+  if [ "$DUE_EPOCH" -gt 0 ] && [ "$DUE_EPOCH" -le "$THREE_DAYS_EPOCH" ] && [ "$STATUS" = "quoting" ]; then
     DUE_DISP=$(date -d "$DUE_STR" '+%m/%d' 2>/dev/null || echo "$DUE_STR")
     if [ "$DUE_EPOCH" -lt "$NOW_EPOCH" ]; then
       URGENT="$URGENT\n• $PROJ — $CUSTOMER — **OVERDUE ($DUE_DISP)**"

@@ -3,7 +3,7 @@
 ## Status
 - **Status:** Quoting
 - **Revision:** Rev 0
-- **Due date:** 2026-03-23
+- **Due date:** 2026-04-07
 - **Customer:** Ford (VOSS standards)
 
 ## Notes

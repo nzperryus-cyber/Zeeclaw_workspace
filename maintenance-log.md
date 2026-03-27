@@ -317,3 +317,76 @@
   ✓ 24-68775 - Metalsa Frame Wax: 1 file(s)
 
 **Status:** 1 issue(s) found ⚠️
+
+---
+## Weekly Maintenance — 2026-03-26 Thu 07:36 EDT
+
+**Empty directories:**
+  - /home/nathan/.openclaw/workspace/documents/pdfs
+  - /home/nathan/.openclaw/workspace/projects/25-67725/rfq
+  - /home/nathan/.openclaw/workspace/projects/25-67725/quotes
+  - /home/nathan/.openclaw/workspace/projects/25-67725/meetings
+  - /home/nathan/.openclaw/workspace/projects/25-67725/sows
+  - /home/nathan/.openclaw/workspace/projects/25-71662/rfq
+  - /home/nathan/.openclaw/workspace/projects/25-71662/quotes
+  - /home/nathan/.openclaw/workspace/projects/25-71662/meetings
+  - /home/nathan/.openclaw/workspace/projects/25-71662/sows
+  - /home/nathan/.openclaw/workspace/projects/25-72998/rfq
+  - /home/nathan/.openclaw/workspace/projects/25-72998/quotes
+  - /home/nathan/.openclaw/workspace/projects/25-72998/meetings
+  - /home/nathan/.openclaw/workspace/projects/25-72998/sows
+  - /home/nathan/.openclaw/workspace/projects/25-73287/meetings
+  - /home/nathan/.openclaw/workspace/projects/25-73050/rfq
+  - /home/nathan/.openclaw/workspace/projects/25-73050/quotes
+  - /home/nathan/.openclaw/workspace/projects/25-73050/meetings
+  - /home/nathan/.openclaw/workspace/projects/25-73050/sows
+  - /home/nathan/.openclaw/workspace/projects/25-72313/rfq
+  - /home/nathan/.openclaw/workspace/projects/25-72313/quotes
+  - /home/nathan/.openclaw/workspace/projects/25-72313/sows
+
+**Git uncommitted changes:** yes ⚠️
+
+**Drive backup:** 1aqALyzzp_tHSocguKXOjNO495Jp6WOJU  workspace-2026-03-26.tar.gz  file  2.2 MB   2026-03-26 06:01
+
+**Cron jobs:**
+  ID                                   Name                     Schedule                         Next       Last       Status    Target    Agent ID   Model
+
+**OpenClaw Critical Issues:**
+  CRITICAL Telegram group commands have no sender allowlist
+  Telegram group access is enabled but no sender allowlist is configured; this allows any group member to invoke /… commands (including skill commands).
+  Fix: Approve yourself via pairing (recommended), or set channels.telegram.groupAllowFrom (or per-group groups.<id>.allowFrom).
+
+**OpenClaw Warnings:** 3 warning(s)
+
+**Machine load (5m avg):** 1.15
+**OpenClaw /tmp size:** 664K
+**Tailscale:** 100.89.93.42    nathan-macbookpro  nzperryus@  linux  -                            
+
+**Memory logs:** 2 files, 44K
+
+**Skills:**
+  - iyeque-pdf-reader
+  - morning-briefing.sh
+  - nightly-commit.sh
+  - ontology
+  - openclaw-update.sh
+  - skill-vetter
+  - weekly-maintenance.sh
+  - workspace-backup.sh
+  [system skills]
+  - pdf-extract
+  - rfq-analyzer
+  - self-improving-agent
+  - skills
+  - sow
+  - summarize
+  - weekly-evolver.sh
+
+**RFQ shared_folder check:**
+  ✓ 25-67725 - Ford Plasma Cells: 5 file(s)
+  ✓ 25-72998 - MBUSI Gluing Cell: 5 file(s)
+  ✓ 25-72313 - Ford FRAP Mega Cell: 1 file(s)
+  ✓ 25-71662 - Ford Cobot Projects: 8 file(s)
+  ✓ 24-68775 - Metalsa Frame Wax: 1 file(s)
+
+**Status:** 1 issue(s) found ⚠️

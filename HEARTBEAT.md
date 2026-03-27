@@ -1,7 +1,7 @@
 # HEARTBEAT.md — Proactive Check-ins
 
 ## Rules
-- Quiet hours: 11pm–8am Eastern. Stay silent unless urgent.
+- Quiet hours: 11pm–7am Eastern. Stay silent unless urgent.
 - Max 3 proactive messages per day.
 - Cooldown: 45 min minimum between proactive messages.
 - Rotate through topics to avoid spam.
@@ -23,13 +23,19 @@ Send a 1-2 sentence check-in about Zander (Nathan's 7-year-old son, 2nd grade, i
 **Family/Amy — every 2 days**
 Ask how Amy or Zella are doing. 1-2 sentences, casual. Zella is 18, freshman in college, works at a toy store, lives at home. Amy is a former nurse, now stay-at-home, pickleball/volleyball.
 
+**Reminders — every heartbeat**
+Check `memory/reminders.json` for any due reminders. If found, send Telegram to Nathan (chat_id: 8264918962), then remove the triggered reminder from the file.
+
+**Golf — weekends only**
+If Saturday or Sunday, ask if Nathan has played recently. Brief.
+
 **Golf — weekends only**
 If Saturday or Sunday, ask if Nathan has played recently. Brief.
 
 ---
 
 ## When to stay quiet
-- It's between 11pm and 8am Eastern
+- It's between 11pm and 7am Eastern
 - Nothing noteworthy to report
 - Nathan already caught up on the topic recently
 - Less than 45 min since last proactive message
