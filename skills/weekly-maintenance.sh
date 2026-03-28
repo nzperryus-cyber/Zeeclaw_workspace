@@ -82,16 +82,28 @@ if echo "$GOG_OUT" | grep -qi "invalid_grant\|expired\|unauthorized\|error"; the
   ISSUES_FOUND=1
 fi
 
-# ---- Drive backup check ----
-DRIVE_BACKUP_ID="17YBaOOHxNOWOzB-_dHKhFy7tJp9juqct"
-DRIVE_FILE=$(gog drive ls --account nzperryus@gmail.com --parent "$DRIVE_BACKUP_ID" 2>&1 | tail -n +2 | head -1 || true)
-if [ -n "$DRIVE_FILE" ]; then
-  # Check if most recent backup is from today or yesterday
-  echo "" >> "$LOG"
-  echo "**Drive backup:** $DRIVE_FILE" >> "$LOG"
+# ---- Drive backup check (rclone to google-drive:ZeeclawBackup) ----
+BACKUP_LOG="$HOME/.zeeclaw/backup.log"
+LAST_SUCCESS=$(grep "Backup complete" "$BACKUP_LOG" 2>/dev/null | tail -1)
+LAST_FAIL=$(grep "Backup FAILED" "$BACKUP_LOG" 2>/dev/null | tail -1)
+
+echo "" >> "$LOG"
+echo "**Drive backup:**" >> "$LOG"
+
+if [ -n "$LAST_SUCCESS" ]; then
+  echo "  Last success: $LAST_SUCCESS" >> "$LOG"
+  
+  # Check if backup is stale (>2 days)
+  SUCCESS_DATE=$(echo "$LAST_SUCCESS" | grep -oE '[A-Z][a-z]{2} [A-Z][a-z]{2} [0-9]{1,2}' | tail -1)
+  echo "  $SUCCESS_DATE" >> "$LOG"
+  
+  # Compare with last failure
+  if [ -n "$LAST_FAIL" ]; then
+    FAIL_DATE=$(echo "$LAST_FAIL" | grep -oE '[A-Z][a-z]{2} [A-Z][a-z]{2} [0-9]{1,2}' | tail -1)
+    echo "  Last failure: $FAIL_DATE" >> "$LOG"
+  fi
 else
-  echo "" >> "$LOG"
-  echo "**Drive backup:** No backup found in Zeeclaw folder ⚠️" >> "$LOG"
+  echo "  **No successful backup found** ⚠️" >> "$LOG"
   ISSUES_FOUND=1
 fi
 

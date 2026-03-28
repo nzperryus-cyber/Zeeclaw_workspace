@@ -503,42 +503,58 @@ def main():
         )
     
     if args.command == "create":
-        props = json.loads(args.props)
+        try:
+            props = json.loads(args.props)
+        except json.JSONDecodeError as e:
+            print(f"Error: Invalid JSON in --props: {e.msg}")
+            return 1
         entity = create_entity(args.type, props, args.graph, args.id)
         print(json.dumps(entity, indent=2))
-    
+
     elif args.command == "get":
         entity = get_entity(args.id, args.graph)
         if entity:
             print(json.dumps(entity, indent=2))
         else:
             print(f"Entity not found: {args.id}")
-    
+
     elif args.command == "query":
-        where = json.loads(args.where)
+        try:
+            where = json.loads(args.where)
+        except json.JSONDecodeError as e:
+            print(f"Error: Invalid JSON in --where: {e.msg}")
+            return 1
         results = query_entities(args.type, where, args.graph)
         print(json.dumps(results, indent=2))
-    
+
     elif args.command == "list":
         results = list_entities(args.type, args.graph)
         print(json.dumps(results, indent=2))
-    
+
     elif args.command == "update":
-        props = json.loads(args.props)
+        try:
+            props = json.loads(args.props)
+        except json.JSONDecodeError as e:
+            print(f"Error: Invalid JSON in --props: {e.msg}")
+            return 1
         entity = update_entity(args.id, props, args.graph)
         if entity:
             print(json.dumps(entity, indent=2))
         else:
             print(f"Entity not found: {args.id}")
-    
+
     elif args.command == "delete":
         if delete_entity(args.id, args.graph):
             print(f"Deleted: {args.id}")
         else:
             print(f"Entity not found: {args.id}")
-    
+
     elif args.command == "relate":
-        props = json.loads(args.props)
+        try:
+            props = json.loads(args.props)
+        except json.JSONDecodeError as e:
+            print(f"Error: Invalid JSON in --props: {e.msg}")
+            return 1
         rel = create_relation(args.from_id, args.rel, args.to_id, props, args.graph)
         print(json.dumps(rel, indent=2))
     

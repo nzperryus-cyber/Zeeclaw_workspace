@@ -8,6 +8,11 @@ cd "$WORKSPACE" || exit 1
 TELEGRAM_BOT_TOKEN="${TELEGRAM_BOT_TOKEN:-$(grep TELEGRAM_BOT_TOKEN ~/.zeeclaw/credentials.json 2>/dev/null | cut -d'"' -f4)}"
 TELEGRAM_CHAT_ID="${TELEGRAM_CHAT_ID:-8264918962}"
 
+# Escape Markdown special characters for Telegram
+escape_markdown() {
+  echo "$1" | sed 's/\\/\\\\/g; s/`/\\`/g; s/\*/\\*/g; s/_/\\_/g; s/\[/\\[/g; s/\]/\\]/g'
+}
+
 TODAY=$(date '+%Y-%m-%d')
 NOW_EPOCH=$(date '+%s')
 THREE_DAYS_EPOCH=$((NOW_EPOCH + 259200))
@@ -67,6 +72,15 @@ if [ -z "$WEATHER" ] || [ "$WEATHER" = " " ]; then
   WEATHER="unavailable"
 fi
 
+# OpenClaw health check
+HEALTH=$(openclaw health --json 2>/dev/null)
+HEALTH_OK=$(echo "$HEALTH" | python3 -c "import json,sys; d=json.load(sys.stdin); print('ok' if d.get('ok') else 'fail')" 2>/dev/null || echo "unknown")
+if [ "$HEALTH_OK" != "ok" ]; then
+  HEALTH_MSG="\n\n**⚠️ OpenClaw health: $HEALTH_OK**"
+else
+  HEALTH_MSG=""
+fi
+
 # Build message
 if [ -n "$URGENT" ]; then
   MSG="**Due soon:**$URGENT"
@@ -76,7 +90,7 @@ if [ -n "$STALE" ]; then
   MSG="$MSG\n\n**Stale quotes (14+ days):**$STALE"
 fi
 
-MSG="$MSG\n\n**Weather:** $WEATHER"
+MSG="$MSG\n\n**Weather:** $WEATHER$HEALTH_MSG"
 
 # Send
 if [ -z "$TELEGRAM_BOT_TOKEN" ]; then
@@ -86,7 +100,7 @@ fi
 
 curl -s -X POST "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage" \
   -d "chat_id=$TELEGRAM_CHAT_ID" \
-  -d "text=$(echo -e "Good morning.\n$MSG" | sed 's/\\n/ /g')" \
+  -d "text=$(echo -e "Good morning.\n$MSG")" \
   -d "parse_mode=Markdown" > /dev/null 2>&1
 
 echo "Morning brief sent at $(date)"
