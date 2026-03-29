@@ -390,3 +390,77 @@
   ✓ 24-68775 - Metalsa Frame Wax: 1 file(s)
 
 **Status:** 1 issue(s) found ⚠️
+
+---
+## Weekly Maintenance — 2026-03-28 Sat 13:00 EDT
+
+**Empty directories:**
+  - /home/nathan/.openclaw/workspace/documents/pdfs
+  - /home/nathan/.openclaw/workspace/projects/25-67725/rfq
+  - /home/nathan/.openclaw/workspace/projects/25-67725/quotes
+  - /home/nathan/.openclaw/workspace/projects/25-67725/sows
+  - /home/nathan/.openclaw/workspace/projects/25-71662/rfq
+  - /home/nathan/.openclaw/workspace/projects/25-71662/quotes
+  - /home/nathan/.openclaw/workspace/projects/25-71662/sows
+  - /home/nathan/.openclaw/workspace/projects/25-72998/quotes
+  - /home/nathan/.openclaw/workspace/projects/25-72998/sows
+  - /home/nathan/.openclaw/workspace/projects/25-73287/meetings
+  - /home/nathan/.openclaw/workspace/projects/25-73050/rfq
+  - /home/nathan/.openclaw/workspace/projects/25-73050/quotes
+  - /home/nathan/.openclaw/workspace/projects/25-73050/meetings
+  - /home/nathan/.openclaw/workspace/projects/25-73050/sows
+  - /home/nathan/.openclaw/workspace/projects/25-72313/rfq
+  - /home/nathan/.openclaw/workspace/projects/25-72313/quotes
+  - /home/nathan/.openclaw/workspace/projects/25-72313/sows
+
+**Large files (>10MB):**
+  - /home/nathan/.openclaw/workspace/oem-standards/mercedes/000_B3.026.02.00_GL-EN_Software_SPS_Teil2_CPU1517F_V60.10.pdf (13M)
+  - /home/nathan/.openclaw/workspace/.git/objects/58/d2cac89f1f3fa3abb0ad5954e1e82a70ea7c97 (11M)
+
+**Git uncommitted changes:** yes ⚠️
+
+**Drive backup:**
+  Last success: Sat Mar 28 09:40:09 AM EDT 2026: Backup complete
+  Sat Mar 28
+  Last failure: Fri Mar 27
+
+**Cron jobs:**
+
+**Machine load (5m avg):** 0.32
+**OpenClaw /tmp size:** 2.1M
+**Tailscale:** 100.89.93.42    nathan-macbookpro  nzperryus@  linux  -                             
+
+**Memory logs:** 3 files, 56K
+
+**Skills:**
+  - end-of-day.sh
+  - export-projects.py
+  - export-projects.sh
+  - iyeque-pdf-reader
+  - morning-briefing.sh
+  - nightly-commit.log
+  - nightly-commit.sh
+  - ontology
+  - ontology-sync.sh
+  - openclaw-update.sh
+  - reminder
+  - skill-vetter
+  - weekly-maintenance.sh
+  - workspace-backup.sh
+  [system skills]
+  - pdf-extract
+  - rfq-analyzer
+  - self-improving-agent
+  - skills
+  - sow
+  - summarize
+  - weekly-evolver.sh
+
+**RFQ shared_folder check:**
+  ✓ 25-67725 - Ford Plasma Cells: 5 file(s)
+  ✓ 25-72998 - MBUSI Gluing Cell: 6 file(s)
+  ✓ 25-72313 - Ford FRAP Mega Cell: 1 file(s)
+  ✓ 25-71662 - Ford Cobot Projects: 8 file(s)
+  ✓ 24-68775 - Metalsa Frame Wax: 1 file(s)
+
+**Status:** 1 issue(s) found ⚠️

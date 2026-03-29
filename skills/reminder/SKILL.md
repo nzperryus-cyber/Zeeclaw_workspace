@@ -1,44 +1,25 @@
 # Reminder Skill
 
-Manage reminders by adding them to Google Tasks.
-
-## Setup
-
-- Google Tasks API must be enabled in Google Cloud Console
-- Run `gog auth add <email> --services=tasks` to authorize
-- Task list ID: `MTY5NTc5MDE2MDgyMDgwNjA3NDE6MDow` ("My Tasks")
-
-## Triggers
-
-- "remind me..." / "reminder..." / "set a reminder..."
-- Any message that looks like a reminder request
+Manage reminders using cron for time-specific delivery.
 
 ## Commands
 
-### Add Reminder (to Google Tasks)
+### Set Reminder
 
-When Nathan says something like "remind me tomorrow at 3pm to email Bob":
-1. Parse the datetime and message
-2. Run: `gog tasks add MTY5NTc5MDE2MDgyMDgwNjA3NDE6MDow --title "<message>" --due "<YYYY-MM-DD>"`
-3. Confirm to Nathan: "Added to Google Tasks: [message] — due [date]"
+When Nathan says "remind me at [time] to [message]":
+1. Parse the datetime from the message
+2. Create a cron job with `schedule.kind="at"` using the exact time
+3. Set `sessionTarget="main"` and `payload.kind="systemEvent"` with the reminder text
+4. Confirm: "Reminder set for [time]: [message]"
 
-### List Reminders (from Google Tasks)
+### List/Cancel Reminders
 
-When Nathan says "show reminders" or "what reminders do I have":
-1. Run: `gog tasks list MTY5NTc5MDE2MDgyMDgwNjA3NDE6MDow`
-2. Format as: `• [title] — due [date]` (show pending tasks)
-3. If empty: "No pending reminders"
-
-### Remove/Clear Reminder
-
-When Nathan says "remove reminder [title]" or "complete reminder [title]":
-1. Get task ID from `gog tasks list`
-2. Run: `gog tasks complete <tasklistId> <taskId>`
-3. Confirm to Nathan: "Marked '[title]' complete"
+When Nathan says "show reminders" or "cancel reminder [title]":
+1. Run `openclaw cron list` to list active cron jobs
+2. For cancellation, use `openclaw cron remove <jobId>`
 
 ## Notes
 
-- Uses Google Tasks API via gog CLI
-- Due dates are date-only (Google ignores time)
-- Nathan can manage reminders in Google Tasks app with native notifications
-- No cron needed — just add tasks to his Google account
+- Always use cron — it delivers at the exact time specified
+- Google Tasks is not used for reminders
+- Reminders fire as Telegram messages via the main session
