@@ -1,0 +1,70 @@
+[2026-03-30 09:37] === Ontology Sync Started ===
+No sessions found for yesterday
+[2026-03-30 11:59] === Meta→Ontology Sync Started ===
+[2026-03-30 11:59] Found 5 project meta.md files
+[2026-03-30 11:59] UPSERT proj_25_67725: rev 1 sent | Ford
+[2026-03-30 11:59] UPSERT proj_25_71662: quoting | Ford (VOSS standards)
+[2026-03-30 11:59] UPSERT proj_25_72313: quoting | Ford
+[2026-03-30 11:59] UPSERT proj_25_72998: sent | MBUSI (Mercedes)
+[2026-03-30 11:59] UPSERT proj_25_73050: mothballed | Stellantis
+[2026-03-30 11:59] Meta→Ontology Sync: 5 upserted, 0 errors
+[2026-03-30 11:59] === Meta→Ontology Sync Complete ===
+[2026-03-30 12:00] === Meta→Ontology Sync Started ===
+[2026-03-30 12:00] Found 5 project meta.md files
+[2026-03-30 12:00] UPSERT proj_25_67725: sent | Ford
+[2026-03-30 12:00] UPSERT proj_25_71662: quoting | Ford (VOSS standards)
+[2026-03-30 12:00] UPSERT proj_25_72313: quoting | Ford
+[2026-03-30 12:00] UPSERT proj_25_72998: sent | MBUSI (Mercedes)
+[2026-03-30 12:00] UPSERT proj_25_73050: mothballed | Stellantis
+[2026-03-30 12:00] Meta→Ontology Sync: 5 upserted, 0 errors
+[2026-03-30 12:00] === Meta→Ontology Sync Complete ===
+[2026-03-30 12:18] === Meta→Ontology Sync Started ===
+[2026-03-30 12:18] Found 5 project meta.md files
+[2026-03-30 12:18] UPSERT proj_25_67725: sent | Ford
+[2026-03-30 12:18] UPSERT proj_25_71662: quoting | Ford (VOSS standards)
+[2026-03-30 12:18] UPSERT proj_25_72313: quoting | Ford
+[2026-03-30 12:18] UPSERT proj_25_72998: sent | MBUSI (Mercedes)
+[2026-03-30 12:18] UPSERT proj_25_73050: mothballed | Stellantis
+[2026-03-30 12:18] Meta→Ontology Sync: 5 upserted, 0 errors
+[2026-03-30 12:18] === Meta→Ontology Sync Complete ===
+[2026-03-30 12:47] === Meta→Ontology Sync Started ===
+[2026-03-30 12:47] Found 6 project meta.md files
+[2026-03-30 12:47] UPSERT proj_25_67725: sent | Ford
+[2026-03-30 12:47] UPSERT proj_25_71662: quoting | Ford (VOSS standards)
+[2026-03-30 12:47] UPSERT proj_25_72313: quoting | Ford
+[2026-03-30 12:47] UPSERT proj_25_72998: sent | MBUSI (Mercedes)
+[2026-03-30 12:47] UPSERT proj_25_73050: mothballed | Stellantis
+[2026-03-30 12:47] UPSERT proj_25_73287: quoting | MBUSI
+[2026-03-30 12:47] Meta→Ontology Sync: 6 upserted, 0 errors
+[2026-03-30 12:47] === Meta→Ontology Sync Complete ===
+[2026-03-30 13:26] === Meta→Ontology Sync Started ===
+[2026-03-30 13:26] Found 6 project meta.md files
+[2026-03-30 13:26] UPSERT proj_25_67725: quoting | Ford
+[2026-03-30 13:26] UPSERT proj_25_71662: quoting | Ford (VOSS standards)
+[2026-03-30 13:26] UPSERT proj_25_72313: quoting | Ford
+[2026-03-30 13:26] UPSERT proj_25_72998: sent | MBUSI (Mercedes)
+[2026-03-30 13:26] UPSERT proj_25_73050: mothballed | Stellantis
+[2026-03-30 13:26] UPSERT proj_25_73287: quoting | MBUSI
+[2026-03-30 13:26] Meta→Ontology Sync: 6 upserted, 0 errors
+[2026-03-30 13:26] === Meta→Ontology Sync Complete ===
+[2026-03-30 14:03] === Meta→Ontology Sync Started ===
+[2026-03-30 14:03] Found 6 project meta.md files
+[2026-03-30 14:03] UPSERT proj_25_67725: quoting | Ford
+[2026-03-30 14:03] UPSERT proj_25_71662: quoting | Ford (VOSS standards)
+[2026-03-30 14:03] UPSERT proj_25_72313: quoting | Ford
+[2026-03-30 14:03] UPSERT proj_25_72998: sent | MBUSI (Mercedes)
+[2026-03-30 14:03] UPSERT proj_25_73050: mothballed | Stellantis
+[2026-03-30 14:03] UPSERT proj_25_73287: quoting | MBUSI
+[2026-03-30 14:03] Meta→Ontology Sync: 6 upserted, 0 errors
+[2026-03-30 14:03] === Meta→Ontology Sync Complete ===
+[2026-03-30 14:06] === Meta→Ontology Sync Started ===
+[2026-03-30 14:06] Found 7 project meta.md files
+[2026-03-30 14:06] UPSERT proj_24_68775: quoting | Metalsa
+[2026-03-30 14:06] UPSERT proj_25_67725: quoting | Ford
+[2026-03-30 14:06] UPSERT proj_25_71662: quoting | Ford (VOSS standards)
+[2026-03-30 14:06] UPSERT proj_25_72313: quoting | Ford
+[2026-03-30 14:06] UPSERT proj_25_72998: sent | MBUSI (Mercedes)
+[2026-03-30 14:06] UPSERT proj_25_73050: mothballed | Stellantis
+[2026-03-30 14:06] UPSERT proj_25_73287: quoting | MBUSI
+[2026-03-30 14:06] Meta→Ontology Sync: 7 upserted, 0 errors
+[2026-03-30 14:06] === Meta→Ontology Sync Complete ===

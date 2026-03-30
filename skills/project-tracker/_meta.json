@@ -1,0 +1,7 @@
+{
+  "name": "project-tracker",
+  "version": "1.0.0",
+  "description": "Automatic project tracking: parses project updates from conversation and writes to meta.md",
+  "trigger": "project-tracker",
+  "workspace": "/home/nathan/.openclaw/workspace"
+}

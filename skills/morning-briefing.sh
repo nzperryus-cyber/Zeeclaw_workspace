@@ -5,6 +5,9 @@
 WORKSPACE="/home/nathan/.openclaw/workspace"
 cd "$WORKSPACE" || exit 1
 
+# Sync meta.md files to ontology first — ensures project data is current before we check it
+bash "$WORKSPACE/skills/ontology-sync-meta.sh" >> "$WORKSPACE/memory/ontology/ontology-sync.log" 2>&1
+
 TELEGRAM_BOT_TOKEN="${TELEGRAM_BOT_TOKEN:-$(grep TELEGRAM_BOT_TOKEN ~/.zeeclaw/credentials.json 2>/dev/null | cut -d'"' -f4)}"
 TELEGRAM_CHAT_ID="${TELEGRAM_CHAT_ID:-8264918962}"
 

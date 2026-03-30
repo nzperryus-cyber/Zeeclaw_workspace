@@ -1,0 +1,76 @@
+[2026-03-30 13:59] UPDATE 25-67725: status=quoting rev=Rev 2 due=2026-04-07
+[2026-03-30 13:59]   ONTOLOGY sync: ok — {
+  "id": "proj_25_67725",
+  "type": "Project",
+  "properties": {
+    "name": "Plasma",
+    "project_id": "25-67725",
+    "customer": "Ford",
+    "description": "Ford \u2014 Plasma",
+    "status": "quoting",
+    "rev": "Rev 2",
+    "sent_date": "2026-03-19",
+    "due": "2026-04-07",
+    "notes": "## History\n- 2026-03-19 \u2014 Sent rev 1\n- 2026-03-30 \u2014 Rev 2 quoting, due 4/7/26",
+    "folder": "projects/25-67725/"
+  },
+  "created": "2026-03-21T01:46:43.482770+00:00",
+  "updated": "2026-03-30T17:59:09.564560+00:00"
+}
+[2026-03-30 13:59] UPDATE 25-72313: status=quoting rev=Rev 1 due=ASAP
+[2026-03-30 13:59]   ONTOLOGY sync: ok — {
+  "id": "proj_25_72313",
+  "type": "Project",
+  "properties": {
+    "name": "FRAP Mega Sealer",
+    "project_id": "25-72313",
+    "customer": "Ford",
+    "description": "Ford \u2014 FRAP Mega Sealer",
+    "status": "quoting",
+    "rev": "Rev 1",
+    "sent_date": "2026-03-09",
+    "folder": "projects/25-72313/",
+    "notes": "- Timing limitation \u2014 cannot quote current schedule",
+    "due": "ASAP"
+  },
+  "created": "2026-03-21T01:46:43.437066+00:00",
+  "updated": "2026-03-30T17:59:42.173739+00:00"
+}
+[2026-03-30 14:00] UPDATE 25-72313: status=quoting rev=Rev 1 due=ASAP
+[2026-03-30 14:00]   ONTOLOGY sync: ok — {
+  "id": "proj_25_72313",
+  "type": "Project",
+  "properties": {
+    "name": "FRAP Mega Sealer",
+    "project_id": "25-72313",
+    "customer": "Ford",
+    "description": "Ford \u2014 FRAP Mega Sealer",
+    "status": "quoting",
+    "rev": "Rev 1",
+    "sent_date": "2026-03-09",
+    "folder": "projects/25-72313/",
+    "notes": "- Timing limitation \u2014 cannot quote current schedule",
+    "due": "ASAP"
+  },
+  "created": "2026-03-21T01:46:43.437066+00:00",
+  "updated": "2026-03-30T18:00:53.623133+00:00"
+}
+[2026-03-30 14:01] UPDATE 25-72313: status=quoting rev=Rev 1 due=ASAP
+[2026-03-30 14:01]   ONTOLOGY sync: ok — {
+  "id": "proj_25_72313",
+  "type": "Project",
+  "properties": {
+    "name": "FRAP Mega Sealer",
+    "project_id": "25-72313",
+    "customer": "Ford",
+    "description": "Ford \u2014 FRAP Mega Sealer",
+    "status": "quoting",
+    "rev": "Rev 1",
+    "sent_date": "2026-03-09",
+    "folder": "projects/25-72313/",
+    "notes": "- Timing limitation \u2014 cannot quote current schedule",
+    "due": "ASAP"
+  },
+  "created": "2026-03-21T01:46:43.437066+00:00",
+  "updated": "2026-03-30T18:01:40.962458+00:00"
+}

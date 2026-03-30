@@ -85,12 +85,40 @@ def load_graph(path: str) -> tuple[dict, list]:
                 entity = record["entity"]
                 entities[entity["id"]] = entity
             elif op == "update":
-                entity_id = record["id"]
+                entity_id = record.get("id") or record.get("entity", {}).get("id")
                 if entity_id in entities:
                     entities[entity_id]["properties"].update(record.get("properties", {}))
                     entities[entity_id]["updated"] = record.get("timestamp")
+                else:
+                    # Try normalizing underscore/hyphen in ID
+                    normalized = entity_id.replace("-", "_") if entity_id else None
+                    if normalized and normalized in entities:
+                        entities[normalized]["properties"].update(record.get("properties", {}))
+                        entities[normalized]["updated"] = record.get("timestamp")
+                    elif "entity" in record:
+                        # upsert: entity sub-document exists, create if not found
+                        sub = record["entity"]
+                        sub_id = sub.get("id")
+                        # normalize sub_id too
+                        if sub_id:
+                            sub_normalized = sub_id.replace("-", "_")
+                            # use whichever form matches already-loaded entities
+                            actual_id = sub_id if sub_id in entities else sub_normalized
+                            if actual_id in entities:
+                                entities[actual_id]["properties"].update(record.get("properties", {}))
+                                entities[actual_id]["updated"] = record.get("timestamp")
+                            else:
+                                # create new entity from sub-document
+                                new_entity = dict(sub)
+                                new_entity["properties"] = {**sub.get("properties", {}), **record.get("properties", {})}
+                                new_entity["updated"] = record.get("timestamp")
+                                if "created" not in new_entity:
+                                    new_entity["created"] = record.get("timestamp")
+                                entities[sub_id] = new_entity
             elif op == "delete":
-                entity_id = record["id"]
+                entity_id = record.get("id") or record.get("entity", {}).get("id")
+                if entity_id and entity_id not in entities:
+                    entity_id = entity_id.replace("-", "_")
                 entities.pop(entity_id, None)
             elif op == "relate":
                 relations.append({

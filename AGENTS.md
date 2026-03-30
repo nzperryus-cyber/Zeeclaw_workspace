@@ -209,6 +209,50 @@ Think of it like a human reviewing their journal and updating their mental model
 
 The goal: Be helpful without being annoying. Check in a few times a day, do useful background work, but respect quiet time.
 
+## Projects — Always Use meta.md as Source of Truth
+
+**Project files:** `projects/*/meta.md` is the single source of truth. Never use the ontology as the primary source for project status.
+
+### Reading project status
+When Nathan asks about projects, read directly from `projects/*/meta.md`:
+```bash
+python3 skills/project-tracker/tracker.py list  # all projects
+python3 skills/project-tracker/tracker.py status 25-72998  # single project
+```
+Or open `projects/25-72998/meta.md` directly.
+
+### Updating project status
+When Nathan gives a project update, use the project-tracker skill immediately:
+```bash
+python3 skills/project-tracker/tracker.py update "25-67725 rev 2 is quoting due 4/7/26"
+```
+This writes to meta.md AND syncs to ontology in one step.
+
+### The project-tracker skill handles:
+- Status changes: "is quoting", "sent", "mothballed", etc.
+- Revisions: "rev 2", "Rev 1"
+- Due dates: "due 4/7/26", "due ASAP"
+- Customer changes
+- Notes: "timing limitation", "waiting for next round"
+
+### After writing — always confirm what changed
+Do NOT confirm until the write succeeds. If write fails, tell Nathan and suggest manual fix.
+
+### Ontology is for relationships and queries, not project state
+Use ontology.py for: linking projects to customers, querying across projects by status/customer, tracking people. For project status — always meta.md.
+
+### Quick commands:
+```bash
+# List all projects with status
+python3 skills/project-tracker/tracker.py list
+
+# Get single project
+python3 skills/project-tracker/tracker.py status 25-67725
+
+# Update example
+python3 skills/project-tracker/tracker.py update "25-72313 rev 1 is quoting due ASAP note timing limitation"
+```
+
 ## Make It Yours
 
 This is a starting point. Add your own conventions, style, and rules as you figure out what works.

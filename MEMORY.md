@@ -56,3 +56,23 @@ _Curated facts about Nathan, his family, work, and preferences. Updated regularl
 - Family trip to St. Augustine, FL: 3/12–3/15/2025 (spring break with Amy and Zella)
 - Amy recovering from COVID (March 2026)
 - Stan is Nathan's dog, 3 years old, born Halloween
+
+## System & Architecture (2026-03)
+
+### Memory System — Full Architecture
+Nathan's memory system has three layers:
+1. **LCM** (Lossless Context Management) — permanent conversation history via lossless-claw plugin + phi4-mini local model. Never loses context, summarization is free (local).
+2. **Ontology** — structured knowledge graph at `memory/ontology/graph.jsonl`. Query with `ontology.py`. Updated via: (a) morning meta.md sync, (b) nightly 11pm LLM sync from session transcripts.
+3. **MEMORY.md + daily logs** — curated long-term memory + raw daily session logs.
+
+### Skills Installed
+- **mlb-daily-scores**: Atlanta Braves daily scores, 6am ET → Telegram
+- **remindme v2.0.2**: installed 2026-03-28
+- **self-improving-agent**: installed earlier, hook enabled
+
+### OpenClaw Cron Jobs (12 total)
+- 5 healthy (nightly git, nightly backup, MLB scores, Nightly LLM sync, quarterly review)
+- 7 erroring (pre-restart timeout issues — gateway restarted 2026-03-30, timeouts increased)
+
+### Ontology / Project Tracking
+Projects tracked in ontology via `projects/*/meta.md`. Always update ontology when Nathan says "remember that..." about a project. Morning briefing syncs meta.md → ontology automatically.

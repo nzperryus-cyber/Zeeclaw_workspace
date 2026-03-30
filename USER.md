@@ -39,7 +39,7 @@ If Nathan doesn't provide it this way, stop him and correct it.
 - **25-73050** — Stellantis — TNAP glass cell kits — sent rev 0 — 3/6/26
 - **25-72998** — MBUSI — 6 Gluing Cells — sent rev 1 — 3/26/26
 - **25-72313** — Ford — FRAP Mega Sealer — sent rev 0 — 3/9/26
-- **25-67725** — Ford — Plasma — sent rev 1 — 3/19/26
+- **25-67725** — Ford — Plasma — quoting rev 2 — due 4/7/26
 
 ## Context
 
