@@ -1,75 +1,139 @@
 # Project Tracker Skill
 
 ## Purpose
-Automatically capture and persist project updates from natural conversation. When Nathan tells you about a project change — status, revision, due date, customer, notes — write it to the project's `meta.md` file immediately.
+Track all projects with status, revisions, customers, and due dates. Always read from meta.md files directly. Use tracker.py for all writes.
 
-## How It Works
-When you detect a project update in conversation, call the tracker script:
+## Architecture
+
+**Source of truth:** `projects/*/meta.md`
+**Fast index:** `projects/registry.db` (SQLite)
+**Ontology:** Linked for cross-project queries
+
+**Read path:** meta.md → always current
+**Write path:** tracker.py → updates meta.md + registry.db + ontology
+
+## Commands
+
+### List all projects
+```bash
+python3 skills/project-tracker/tracker.py list
+```
+
+### Filter by status
+```bash
+python3 skills/project-tracker/tracker.py list --status quoting
+python3 skills/project-tracker/tracker.py list --status sent
+```
+
+### Filter by customer
+```bash
+python3 skills/project-tracker/tracker.py list --customer Ford
+python3 skills/project-tracker/tracker.py list --status quoting --customer MBUSI
+```
+
+### Single project status
+```bash
+python3 skills/project-tracker/tracker.py status 25-67725
+```
+
+### Project update — NATURAL LANGUAGE
+When Nathan gives a project update, use update with natural language:
 ```bash
 python3 skills/project-tracker/tracker.py update "25-67725 rev 2 is quoting due 4/7/26"
+python3 skills/project-tracker/tracker.py update "25-72998 is waiting for next round from MBUSI"
+python3 skills/project-tracker/tracker.py update "25-72313 rev 1 due ASAP note timing limitation cannot quote current schedule"
 ```
 
-The script parses the input, updates the project's `meta.md`, and syncs to the ontology.
-
-## Meta.md Format — Source of Truth
+### Add new project
+```bash
+python3 skills/project-tracker/tracker.py add 25-73750 --customer "Ford" --description "New cobot cell"
 ```
-# [project-id] — [customer] — [description]
+This creates the full folder structure: `meetings/`, `quotes/`, `rfq/`, `sows/`
+
+### Sync registry from meta.md files
+```bash
+python3 skills/project-tracker/tracker.py sync
+```
+Use after bulk changes or if registry seems out of sync.
+
+### Archive a project
+```bash
+python3 skills/project-tracker/tracker.py archive 25-73050
+```
+
+## How to Handle Project Updates
+
+When Nathan says something like:
+- "25-67725 rev 2 is quoting due 4/7/26"
+- "25-72998 is waiting for next round"
+- "25-72313 rev 1 is quoting due ASAP"
+
+**Always:**
+1. Call `tracker.py update "..."` with the exact text Nathan said
+2. Read the confirmation output
+3. Show Nathan what was updated
+
+**Never:**
+- Edit meta.md files manually
+- Update the ontology directly
+- Use the index.md as the project source
+
+## Meta.md Format
+
+Every project has `projects/XX-XXXXX/meta.md`:
+```
+# 25-67725 — Ford — Plasma
 
 ## Status
-- **Status:** [status]
-- **Revision:** [rev]
-- **Due date:** [date]
-- **Customer:** [customer]
+- **Status:** Quoting
+- **Revision:** Rev 2
+- **Due date:** 2026-04-07
+- **Customer:** Ford
 
 ## Notes
+Scope notes here.
 
 ## History
-- [date] — [note]
+- 2026-03-19 — Sent rev 1
+- 2026-03-30 — Rev 2 quoting, due 4/7/26
 ```
 
 ## Status Values
-Use lowercase: `quoting`, `sent`, `awarded`, `lost`, `mothballed`, `active`, `completed`, `paused`, `new`
+Use these exact values: `new`, `quoting`, `sent`, `awarded`, `lost`, `mothballed`, `active`, `completed`, `paused`
 
 ## Revision Format
-`Rev 0`, `Rev 1`, `Rev 2`, etc.
+Always `Rev 0`, `Rev 1`, `Rev 2`, etc.
 
-## Patterns to Detect
-- "25-72998 rev 1 is sent" → status=sent, rev=Rev 1
-- "25-67725 rev 2 is quoting stage due 4/7/26" → status=quoting, rev=Rev 2, due=2026-04-07
-- "25-72313 due ASAP timing limitation" → status=quoting, due=ASAP, notes=timing limitation
-- "25-73050 is mothballed" → status=mothballed
-- "25-73287 is new MBUSI cavity wax robot" → status=new, customer=MBUSI
+## Example Conversations
 
-## Workflow
-1. **Detect** project update in message
-2. **Parse** project ID, status, rev, due date, notes
-3. **Write** to `projects/[id]/meta.md` immediately
-4. **Verify** write succeeded before confirming to Nathan
-5. **Background sync** to ontology (handled by the script)
+**Nathan:** "25-67725 rev 2 is quoting due 4/7/26"
+**You:**
+```bash
+python3 skills/project-tracker/tracker.py update "25-67725 rev 2 is quoting due 4/7/26"
+```
+Output: "Updated 25-67725: quoting, Rev 2, due 2026-04-07"
 
-## Projects Directory
-`/home/nathan/.openclaw/workspace/projects/`
+**Nathan:** "what quoting projects do I have?"
+**You:**
+```bash
+python3 skills/project-tracker/tracker.py list --status quoting
+```
 
-## Index File
-Update `projects/index.md` if the project list changes (new project added, project removed).
+**Nathan:** "show me all MBUSI projects"
+**You:**
+```bash
+python3 skills/project-tracker/tracker.py list --customer MBUSI
+```
+
+**Nathan:** "what's the status of 25-72998?"
+**You:**
+```bash
+python3 skills/project-tracker/tracker.py status 25-72998
+```
 
 ## Red Lines
-- Never claim an update was made if the write failed — tell Nathan it failed and what to do
-- Never use the ontology as the primary source for project status — always read from meta.md
-- Always confirm what you updated: "Updated 25-67725: rev 2, quoting, due 4/7"
-
-## Examples
-
-### Example: Full status update
-Nathan: "25-67725 rev 2 is quoting stage due 4/7/26"
-You call: `tracker.py update "25-67725 rev 2 is quoting due 2026-04-07"`
-You say: "Done. Updated 25-67725: rev 2, quoting, due 4/7/26."
-
-### Example: Status only
-Nathan: "25-72998 is waiting for next round from MBUSI"
-You call: `tracker.py update "25-72998 status sent note waiting for next round"`
-You say: "Done. Updated 25-72998: waiting for next round from MBUSI."
-
-### Example: No project found
-Nathan: "we have a new project with Ford for a plasma table"
-You say: "What's the project number? I need that to create the meta.md entry."
+- Always use `tracker.py update` for project changes — never edit meta.md directly
+- Always show Nathan the tracker.py output confirmation
+- If tracker.py fails, tell Nathan and suggest manual fix
+- Never use the ontology as primary source for project status
+- Never update index.md — it is not the source of truth
