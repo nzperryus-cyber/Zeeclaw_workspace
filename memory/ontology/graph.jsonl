@@ -119,3 +119,12 @@
 {"op": "update", "id": "proj_25_72998", "properties": {"project_id": "25-72998", "status": "sent", "rev": "Rev 1", "sent_date": "2026-03-26", "customer": "MBUSI (Mercedes)", "description": "MBUSI \u2014 6 Gluing Cells", "notes": "- Waiting for next round from MBUSI"}, "timestamp": "2026-03-30T18:06:04.981181+00:00"}
 {"op": "update", "id": "proj_25_73050", "properties": {"project_id": "25-73050", "status": "mothballed", "rev": "Rev 0", "sent_date": "2026-03-06", "customer": "Stellantis", "description": "Stellantis \u2014 TNAP glass cell kits", "notes": "- Lost \u2014 no follow-up expected"}, "timestamp": "2026-03-30T18:06:05.028492+00:00"}
 {"op": "update", "id": "proj_25_73287", "properties": {"project_id": "25-73287", "status": "quoting", "rev": "Rev 0", "due": "2026-04-20", "customer": "MBUSI", "description": "MBUSI \u2014 Cavity Wax North Cell 3 Robot Replacement", "notes": "## History\n- 2026-03-25 \u2014 Project created"}, "timestamp": "2026-03-30T18:06:05.075910+00:00"}
+{"op": "update", "id": "proj_25_67725", "properties": {"status": "quoting", "rev": "Rev 2", "due": "2026-04-07"}, "timestamp": "2026-03-30T19:17:02.099290+00:00"}
+{"op": "update", "id": "proj_25_67725", "properties": {"status": "quoting", "rev": "Rev 2", "due": "2026-04-07"}, "timestamp": "2026-03-30T19:18:10.055007+00:00"}
+{"op": "update", "id": "proj_25_67725", "properties": {"status": "quoting", "rev": "Rev 2", "due": "2026-04-07"}, "timestamp": "2026-03-30T19:19:03.880673+00:00"}
+{"op": "update", "id": "proj_25_67725", "properties": {"status": "quoting", "rev": "Rev 2", "due": "2026-04-07"}, "timestamp": "2026-03-30T19:26:04.222703+00:00"}
+{"op": "update", "id": "proj_25_67725", "properties": {"status": "quoting", "rev": "Rev 2", "due": "2026-04-07"}, "timestamp": "2026-03-30T19:26:42.903021+00:00"}
+{"op": "update", "id": "proj_25_67725", "properties": {"status": "quoting", "rev": "Rev 2", "due": "2026-04-07"}, "timestamp": "2026-03-30T19:33:10.842564+00:00"}
+{"op": "update", "id": "proj_25_67725", "properties": {"status": "quoting", "rev": "Rev 2", "due": "2026-04-07"}, "timestamp": "2026-03-30T19:33:58.587601+00:00"}
+{"op": "update", "id": "proj_25_67725", "properties": {"status": "quoting", "rev": "Rev 3", "due": "2026-04-15"}, "timestamp": "2026-03-30T19:34:04.465033+00:00"}
+{"op": "update", "id": "proj_25_67725", "properties": {"status": "quoting", "rev": "Rev 2", "due": "2026-04-07"}, "timestamp": "2026-03-30T19:34:10.562024+00:00"}

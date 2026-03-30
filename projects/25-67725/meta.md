@@ -7,7 +7,8 @@
 - **Customer:** Ford
 
 ## Notes
-
 ## History
 - 2026-03-19 — Sent rev 1
 - 2026-03-30 — Rev 2 quoting, due 4/7/26
+- 2026-03-30 — Rev 3 due 2026-04-15
+- 2026-03-30 — Rev 2 due 2026-04-07
