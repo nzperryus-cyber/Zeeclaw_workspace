@@ -12,6 +12,10 @@
     "knowledge": {
       "version": "1.0.0",
       "installedAt": 1774059004749
+    },
+    "feishu-evolver-wrapper": {
+      "version": "1.7.1",
+      "installedAt": 1774924204050
     }
   }
 }
