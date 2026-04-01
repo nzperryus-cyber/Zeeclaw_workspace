@@ -54,6 +54,8 @@ _Curated facts about Nathan, his family, work, and preferences. Updated regularl
 ## Recent Events
 
 - Family trip to St. Augustine, FL: 3/12–3/15/2025 (spring break with Amy and Zella)
+- Amy and Zander in Myrtle Beach (weekend of 3/28/26 — Boardwalk Billy's for dinner)
+- Amy recovering from COVID (March 2026)
 - Amy recovering from COVID (March 2026)
 - Stan is Nathan's dog, 3 years old, born Halloween
 
