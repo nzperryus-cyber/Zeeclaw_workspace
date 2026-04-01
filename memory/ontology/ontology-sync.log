@@ -154,3 +154,15 @@ SYNC: 7 upserted, 0 errors
 [2026-03-31 12:30] Meta→Ontology Sync: 7 upserted, 0 errors
 SYNC: 7 upserted, 0 errors
 [2026-03-31 12:30] === Meta→Ontology Sync Complete ===
+[2026-04-01 08:04] === Meta→Ontology Sync Started ===
+[2026-04-01 08:04] Found 7 project meta.md files
+[2026-04-01 08:04] ERROR proj_24_68775: python3: can't open file '/home/nathan/.openclaw/workspace/skills/ontology/scripts/ontology.py': [Errno 2] No such file or directory
+[2026-04-01 08:04] ERROR proj_25_67725: python3: can't open file '/home/nathan/.openclaw/workspace/skills/ontology/scripts/ontology.py': [Errno 2] No such file or directory
+[2026-04-01 08:04] ERROR proj_25_71662: python3: can't open file '/home/nathan/.openclaw/workspace/skills/ontology/scripts/ontology.py': [Errno 2] No such file or directory
+[2026-04-01 08:04] ERROR proj_25_72313: python3: can't open file '/home/nathan/.openclaw/workspace/skills/ontology/scripts/ontology.py': [Errno 2] No such file or directory
+[2026-04-01 08:04] ERROR proj_25_72998: python3: can't open file '/home/nathan/.openclaw/workspace/skills/ontology/scripts/ontology.py': [Errno 2] No such file or directory
+[2026-04-01 08:04] ERROR proj_25_73050: python3: can't open file '/home/nathan/.openclaw/workspace/skills/ontology/scripts/ontology.py': [Errno 2] No such file or directory
+[2026-04-01 08:04] ERROR proj_25_73287: python3: can't open file '/home/nathan/.openclaw/workspace/skills/ontology/scripts/ontology.py': [Errno 2] No such file or directory
+[2026-04-01 08:04] Meta→Ontology Sync: 0 upserted, 7 errors
+SYNC: 0 upserted, 7 errors
+[2026-04-01 08:04] === Meta→Ontology Sync Complete ===
