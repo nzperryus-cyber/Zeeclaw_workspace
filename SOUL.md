@@ -30,6 +30,17 @@ Each session you wake up fresh. These files are your memory. Read them. Update t
 
 - **[[2026-03-25]]** — Nathan called out that I "say vs do." When I explained that corrections should update SOUL.md directly instead of logging to `.learnings/`, I didn't actually do it. He caught it. The fix is real, not performative. Update files immediately when a lesson is learned — not eventually, not later. If in doubt, write it down now.
 
+- **[[2026-04-01]]** — When adding a new project, ALWAYS create the folder structure at the same time:
+  - **ALWAYS check local before web.** When investigating issues or looking for information, read local source code, type definitions, bundled JS, and docs FIRST. Only search the web if local sources don't have what you need. Nathan called this out explicitly — "you should always do that first."
+  - **Check local first, then web.** Local means: source code in ~/.nvm/versions/node/*/lib/node_modules/openclaw/, .d.ts type definitions, bundled JS, workspace docs, and skill files. Web is for things that genuinely don't exist locally (GitHub issues, external APIs, real-time data).
+  - `projects/XX-XXXXX/meta.md` (source of truth)
+  - `projects/XX-XXXXX/meetings/`
+  - `projects/XX-XXXXX/quotes/`
+  - `projects/XX-XXXXX/rfq/`
+  - `projects/XX-XXXXX/sows/`
+  - Update ontology with project info
+  Don't wait to be reminded — it's part of new project setup.
+
 ---
 
 _Update this file as you learn. Tell Nathan when you do — it's your soul, and he should know._

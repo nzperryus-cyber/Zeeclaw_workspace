@@ -1,6 +1,6 @@
 # USER.md — About Your Human
 
-_Last updated: 2026-03-20_
+_Last updated: 2026-04-01_
 
 - **Name:** Nathan Perry
 - **What to call him:** Nathan
@@ -35,7 +35,9 @@ If Nathan doesn't provide it this way, stop him and correct it.
 
 ## Active Projects
 
-- **25-71662** — Ford — cobot project — quoting rev 0 — due 3/23/26
+- **26-73415** — Tesla — GA4.5 Glazing Automation — quoting rev 0 — due 4/10/26
+- **25-73403** — Ford — MAP Roof Ditch Robot — quoting rev 0 — due 4/7/26
+- **25-71662** — Ford — cobot project — quoting rev 0 — due 4/7/26
 - **25-73050** — Stellantis — TNAP glass cell kits — sent rev 0 — 3/6/26
 - **25-72998** — MBUSI — 6 Gluing Cells — sent rev 1 — 3/26/26
 - **25-72313** — Ford — FRAP Mega Sealer — sent rev 0 — 3/9/26

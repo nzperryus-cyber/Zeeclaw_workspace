@@ -4,6 +4,18 @@
     "skill-vetter": {
       "version": "1.0.0",
       "installedAt": 1774058524976
+    },
+    "evolver": {
+      "version": "1.40.2",
+      "installedAt": 1775059009981
+    },
+    "feishu-evolver-wrapper": {
+      "version": "1.7.1",
+      "installedAt": 1775059002017
+    },
+    "lossless-claw": {
+      "version": "1.0.1",
+      "installedAt": 1775059404132
     }
   }
 }

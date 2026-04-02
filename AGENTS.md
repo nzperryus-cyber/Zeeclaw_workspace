@@ -238,6 +238,22 @@ This writes to meta.md AND syncs to ontology in one step.
 ### After writing — always confirm what changed
 Do NOT confirm until the write succeeds. If write fails, tell Nathan and suggest manual fix.
 
+### Creating a New Project
+When Nathan gives a new project number (e.g., "25-73403"), create the full structure:
+```bash
+# 1. Create folder structure
+mkdir -p projects/25-73403/{meetings,quotes,rfq,sows}
+
+# 2. Create meta.md (source of truth)
+# See existing projects for format — include status, revision, due date, customer
+
+# 3. Update ontology
+python3 skills/ontology/scripts/ontology.py create --type Project --id proj_25_73403 --props '{"projectNumber":"25-73403","customer":"...","status":"..."}'
+
+# 4. Update projects/index.md table
+```
+Always create the folder structure immediately — don't wait to be reminded.
+
 ### Ontology is for relationships and queries, not project state
 Use ontology.py for: linking projects to customers, querying across projects by status/customer, tracking people. For project status — always meta.md.
 
