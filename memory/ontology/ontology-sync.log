@@ -271,3 +271,17 @@ SYNC: 7 upserted, 0 errors
 [2026-04-01 12:00] === Meta→Ontology Sync Complete ===
 [2026-04-01 12:54] === Ontology Sync Started ===
 No sessions found for yesterday
+[2026-04-02 07:00] === Meta→Ontology Sync Started ===
+[2026-04-02 07:00] Found 9 project meta.md files
+[2026-04-02 07:00] UPSERT proj_24_68775: quoting | Metalsa
+[2026-04-02 07:00] UPSERT proj_25_67725: quoting | Ford
+[2026-04-02 07:00] UPSERT proj_25_71662: quoting | Ford (VOSS standards)
+[2026-04-02 07:00] UPSERT proj_25_72313: quoting | Ford
+[2026-04-02 07:00] UPSERT proj_25_72998: sent | MBUSI (Mercedes)
+[2026-04-02 07:00] UPSERT proj_25_73050: mothballed | Stellantis
+[2026-04-02 07:00] UPSERT proj_25_73287: quoting | MBUSI
+[2026-04-02 07:00] UPSERT proj_25_73403: rev | Ford
+[2026-04-02 07:00] UPSERT proj_26_73415: rev | Tesla
+[2026-04-02 07:00] Meta→Ontology Sync: 9 upserted, 0 errors
+SYNC: 9 upserted, 0 errors
+[2026-04-02 07:00] === Meta→Ontology Sync Complete ===
