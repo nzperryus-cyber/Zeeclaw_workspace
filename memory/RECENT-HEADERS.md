@@ -1,24 +1,24 @@
 # Recent Session Headers
 
-*Auto-generated 2026-04-01 12:28 — last 14 days*
+*Auto-generated 2026-04-02 10:00 — last 14 days*
 
 ## 2026-04-01
 
-**Overview:** Nathan requested a deep dive into all issues with OpenClaw and asked for verification of system soli
+**Overview:** Nathan worked on resolving OpenClaw cron issues after an update.
 
 **Decisions:**
-  • Upgraded LCM to version 0.5.3.
-  • Scheduled Intraday log cron job every 3 hours, Nightly safety net early morning using catc command (not specified in the text).
+  • Upgraded to openclaw version 2026.4.1 based on user's suggestion and existing bug reports.
 
 **Failures:**
-  • None reported explicitly; however, there were mentions of OpenClaw gateway bug and a failing Weekly Evolver cron.
+  • Cron jobs timing out before completion (Issue with crons still being a problem even though they were supposed to be fixed this morning).
 
 **Corrections:**
-  • Nathan's frustration with daily fixes was acknowledged.
-  • Clarification that LCM upgrade should help long-term conversation stability is noted as an intended correction to previous misunderstandings or issues related to memory integrity claims by the assistant (Assistant).
+  • Nathan removed the "wakeMode: 'now'" setting which was causing rogue triggers.
+  • Increased timeout settings for cron scripts after identifying them as too short.
 
 **DNA Patterns:**
-  • None detected explicitly in the provided text; however, there is an implicit pattern of frustration and repeated requests from Nathan for system solidity verification.
+  • SLOPPY_VERIFICATION - CRON TIMEOUTS
+  • MISSING_CONTEXT - OPENCLAW TOKEN USAGE INQUIRY
 
 **Open:**
-  • None explicitly mentioned, but there may be unresolved concerns about system solidity and verification of all OpenClaw components.
+  • Further investigation needed into why 12.2M tokens are being used on OpenClaw today, possibly related to a different counter or LCM storage issues (as per Nathan's later message).
