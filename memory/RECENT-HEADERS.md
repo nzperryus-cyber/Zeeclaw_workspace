@@ -1,6 +1,33 @@
 # Recent Session Headers
 
-*Auto-generated 2026-04-02 10:00 — last 14 days*
+*Auto-generated 2026-04-03 10:02 — last 14 days*
+
+## 2026-04-03
+
+**Overview:** Systematic file-by-file review of LCM source code and configuration.
+
+**Decisions:**
+  • Continue with systematic OpenClaw cleanup session as per user's request.
+
+**Corrections:**
+  • None specified for Nathan's corrections within these specific interactions; however, general guidance was provided on how to proceed with OpenClaw cleanup based on earlier discussions.
+
+**Open:**
+  • Continue reviewing remaining LCM source files.
+  • Move onto review of the core OpenClaw codebase from downloads folder not yet covered in this session (Exchange 12).
+
+
+## 2026-04-02
+
+**Overview:** Continued systematic file-by-file review of LCM source code.
+
+**Decisions:**
+  • Continue reviewing remaining OpenClaw core files from downloads folder as per user's request.
+
+**Corrections:**
+  • FIX: OLLAMA API KEY IN MODELS.JSON TO USE SECRETREF FORMAT
+  • REMOVE: FAKE CLOUD MODELS AND DEAD DUPLICATE MINIMAX-PORTAL
+
 
 ## 2026-04-01
 
