@@ -7,6 +7,11 @@
 - **Customer:** Tesla
 
 ## Notes
+- Plant wants existing design preserved as much as possible
+- Installation Contractor TBD — plant to provide local contact
+- Timing is good
+- All ATN designed equipment
 
 ## History
 - 2026-04-01 — Project created, quoting rev 0, due 4/10/26
+- 2026-04-03 — Met with plant guys. Design intent: preserve existing as much as possible. All ATN equipment.
