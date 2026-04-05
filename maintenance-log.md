@@ -950,3 +950,96 @@
   ✓ 24-68775 - Metalsa Frame Wax: 1 file(s)
 
 **Status:** 1 issue(s) found ⚠️
+
+---
+## Weekly Maintenance — 2026-04-04 Sat 13:00 EDT
+
+**Empty directories:**
+  - /home/nathan/.openclaw/workspace/documents/pdfs
+  - /home/nathan/.openclaw/workspace/memory/logs
+  - /home/nathan/.openclaw/workspace/projects/26-73415/quotes
+  - /home/nathan/.openclaw/workspace/projects/26-73415/meetings
+  - /home/nathan/.openclaw/workspace/projects/26-73415/sows
+  - /home/nathan/.openclaw/workspace/projects/25-67725/rfq
+  - /home/nathan/.openclaw/workspace/projects/25-67725/quotes
+  - /home/nathan/.openclaw/workspace/projects/25-67725/sows
+  - /home/nathan/.openclaw/workspace/projects/25-71662/rfq
+  - /home/nathan/.openclaw/workspace/projects/25-71662/quotes
+  - /home/nathan/.openclaw/workspace/projects/25-71662/sows
+  - /home/nathan/.openclaw/workspace/projects/25-73403/rfq
+  - /home/nathan/.openclaw/workspace/projects/25-73403/quotes
+  - /home/nathan/.openclaw/workspace/projects/25-73403/meetings
+  - /home/nathan/.openclaw/workspace/projects/25-73403/sows
+  - /home/nathan/.openclaw/workspace/projects/25-72998/quotes
+  - /home/nathan/.openclaw/workspace/projects/25-72998/sows
+  - /home/nathan/.openclaw/workspace/projects/25-73287/meetings
+  - /home/nathan/.openclaw/workspace/projects/25-73050/rfq
+  - /home/nathan/.openclaw/workspace/projects/25-73050/quotes
+  - /home/nathan/.openclaw/workspace/projects/25-73050/meetings
+  - /home/nathan/.openclaw/workspace/projects/25-73050/sows
+  - /home/nathan/.openclaw/workspace/projects/25-72313/rfq
+  - /home/nathan/.openclaw/workspace/projects/25-72313/quotes
+  - /home/nathan/.openclaw/workspace/projects/25-72313/sows
+
+**Large files (>10MB):**
+  - /home/nathan/.openclaw/workspace/oem-standards/mercedes/000_B3.026.02.00_GL-EN_Software_SPS_Teil2_CPU1517F_V60.10.pdf (13M)
+  - /home/nathan/.openclaw/workspace/.git/objects/58/d2cac89f1f3fa3abb0ad5954e1e82a70ea7c97 (11M)
+
+**Git uncommitted changes:** yes ⚠️
+
+**Drive backup:**
+  **No successful backup found** ⚠️
+
+**Cron jobs:**
+  openclaw command not found ⚠️
+
+**Machine load (5m avg):** 0.98
+**OpenClaw /tmp size:** 3.3M
+**Tailscale:** 100.89.93.42    nathan-macbookpro  nzperryus@  linux  -                             
+
+**Memory logs:** 5 files, 228K
+
+**Skills:**
+  - evolver
+  - export-projects.py
+  - export-projects.sh
+  - feishu-evolver-wrapper
+  - lossless-claw
+  - nightly-commit.log
+  [system skills]
+  - backup.sh
+  - cron-error-monitor.sh
+  - end-of-day.sh
+  - iyeque-pdf-reader
+  - memory-log
+  - mlb-daily-scores
+  - morning-briefing.sh
+  - nightly-commit.sh
+  - ontology
+  - ontology-sync-meta.sh
+  - ontology-sync.sh
+  - openclaw-update.sh
+  - pdf-extract
+  - projects-index.sh
+  - project-tracker
+  - reminder
+  - rfq-analyzer
+  - secret-checker.sh
+  - self-improvement
+  - self-improving-agent
+  - skill-vetter
+  - sow
+  - summarize
+  - update-check.sh
+  - weekly-evolver.sh
+  - weekly-maintenance.sh
+  - workspace-backup.sh
+
+**RFQ shared_folder check:**
+  ✓ 25-67725 - Ford Plasma Cells: 5 file(s)
+  ✓ 25-72998 - MBUSI Gluing Cell: 6 file(s)
+  ✓ 25-72313 - Ford FRAP Mega Cell: 1 file(s)
+  ✓ 25-71662 - Ford Cobot Projects: 8 file(s)
+  ✓ 24-68775 - Metalsa Frame Wax: 1 file(s)
+
+**Status:** 1 issue(s) found ⚠️

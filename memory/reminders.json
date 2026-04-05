@@ -1,1 +1,9 @@
-[]
+[
+  {
+    "id": "memlog-verify-001",
+    "text": "Memory Log Verification: Check if LCM is storing accurate summaries (not garbage). Verify memory/logs/ is not being written with fabricated content. If working correctly, delete the memory-log cron jobs entirely.",
+    "due": "2026-04-07T09:00:00-04:00",
+    "created": "2026-04-04T12:21:00-04:00",
+    "channel": "telegram"
+  }
+]
