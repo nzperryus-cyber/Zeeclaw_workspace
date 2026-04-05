@@ -1043,3 +1043,112 @@
   ✓ 24-68775 - Metalsa Frame Wax: 1 file(s)
 
 **Status:** 1 issue(s) found ⚠️
+
+---
+## Weekly Maintenance — 2026-04-05 Sun 04:00 EDT
+
+**Empty directories:**
+  - /home/nathan/.openclaw/workspace/documents/pdfs
+  - /home/nathan/.openclaw/workspace/memory/logs
+  - /home/nathan/.openclaw/workspace/projects/26-73415/quotes
+  - /home/nathan/.openclaw/workspace/projects/26-73415/meetings
+  - /home/nathan/.openclaw/workspace/projects/26-73415/sows
+  - /home/nathan/.openclaw/workspace/projects/25-67725/rfq
+  - /home/nathan/.openclaw/workspace/projects/25-67725/quotes
+  - /home/nathan/.openclaw/workspace/projects/25-67725/sows
+  - /home/nathan/.openclaw/workspace/projects/25-71662/rfq
+  - /home/nathan/.openclaw/workspace/projects/25-71662/quotes
+  - /home/nathan/.openclaw/workspace/projects/25-71662/sows
+  - /home/nathan/.openclaw/workspace/projects/25-73403/rfq
+  - /home/nathan/.openclaw/workspace/projects/25-73403/quotes
+  - /home/nathan/.openclaw/workspace/projects/25-73403/meetings
+  - /home/nathan/.openclaw/workspace/projects/25-73403/sows
+  - /home/nathan/.openclaw/workspace/projects/25-72998/quotes
+  - /home/nathan/.openclaw/workspace/projects/25-72998/sows
+  - /home/nathan/.openclaw/workspace/projects/25-73287/meetings
+  - /home/nathan/.openclaw/workspace/projects/25-73050/rfq
+  - /home/nathan/.openclaw/workspace/projects/25-73050/quotes
+  - /home/nathan/.openclaw/workspace/projects/25-73050/meetings
+  - /home/nathan/.openclaw/workspace/projects/25-73050/sows
+  - /home/nathan/.openclaw/workspace/projects/25-72313/rfq
+  - /home/nathan/.openclaw/workspace/projects/25-72313/quotes
+  - /home/nathan/.openclaw/workspace/projects/25-72313/sows
+
+**Large files (>10MB):**
+  - /home/nathan/.openclaw/workspace/oem-standards/mercedes/000_B3.026.02.00_GL-EN_Software_SPS_Teil2_CPU1517F_V60.10.pdf (13M)
+  - /home/nathan/.openclaw/workspace/.git/objects/58/d2cac89f1f3fa3abb0ad5954e1e82a70ea7c97 (11M)
+
+**Git uncommitted changes:** yes ⚠️
+
+**Drive backup:**
+  **No successful backup found** ⚠️
+
+**Cron jobs:**
+  ID                                   Name                     Schedule                         Next       Last       Status    Target    Agent ID   Model
+  fc4aeafe-ed85-4fc7-9402-bf1c4de9f25b Weekly Workspace Main... cron 0 4 * * 0 @ America/New_... <1m ago    2d ago     running   isolated  -          -
+  dd6cc192-27b5-4a00-8116-8cae708261ef Cron Error Monitor       cron 0 * * * * @ America/New_... in 1m      59m ago    ok        main      -          -
+  99cc72c1-b866-4f9b-9d93-86770cbb592f Nightly Git Auto-Commit  cron 10 4 * * * (exact)          in 10m     24h ago    ok        isolated  -          -
+  7db2a7a0-3d67-4d60-96f3-5e861bd2e462 Weekly Evolver           cron 0 5 * * 0 @ America/New_... in 60m     2d ago     ok        isolated  -          -
+  48dd0031-ce6b-48a6-b7c4-1a3e9dac8b07 MLB Daily Scores — At... cron 15 6 * * * (exact)          in 2h      22h ago    ok        isolated  -          -
+  15929d03-6985-4ccb-9ff7-05029bfb1469 Weekly OpenClaw Self-... cron 20 6 * * 0 (exact)          in 2h      -          idle      isolated  -          -
+  6e81f7ec-65a3-4c3b-87b7-dc204b74ea69 Generate RECENT-HEADE... cron 0 10 * * * @ America/New... in 6h      18h ago    ok        isolated  -          -
+  348efcd1-0f4a-41c6-ad9e-fe68411812cc Nightly Workspace Bac... cron 0 2 * * * @ America/New_... in 22h     2h ago     ok        isolated  -          -
+  22c18c97-ce14-4ec3-84fe-12bc2ea079dd Daily Ontology Sync      cron 5 6 * * 1-5 (exact)         in 1d      2d ago     ok        isolated  -          -
+  00bdeade-b5a0-4008-9265-55ebb1b0c6ab Weekday Morning Briefing cron 0 7 * * 1-5 @ America/Ne... in 1d      2d ago     ok        isolated  -          -
+  fbc0a667-f7d2-45ce-9c9c-0747fd5c1d5c Weekly Update Check      cron 0 8 * * 1 @ America/New_... in 1d      2d ago     ok        isolated  -          -
+  9ee1cb19-479f-4cbb-af04-bfaf6d810312 Nightly LLM Ontology ... cron 0 23 * * 1-5 @ America/N... in 2d      1d ago     ok        main      -          -
+  dbd65bd2-835b-430b-9eb0-a942cfb35f8e Weekly Review            cron 0 16 * * 5 @ America/New... in 5d      2d ago     ok        isolated  -          -
+  1cc7dd92-0eca-49c5-b623-cb251a49142c quarterly-setup-review   cron 0 9 1 1,4,7,10 * @ Ameri... in 87d     2d ago     ok        isolated  -          -
+
+**OpenClaw Warnings:** 6 warning(s)
+
+**Machine load (5m avg):** 0.21
+**OpenClaw /tmp size:** 2.4M
+**Tailscale:** 100.89.93.42    nathan-macbookpro  nzperryus@  linux  -                              
+
+**Memory logs:** 5 files, 228K
+
+**Skills:**
+  - evolver
+  - export-projects.py
+  - export-projects.sh
+  - feishu-evolver-wrapper
+  - lossless-claw
+  - nightly-commit.log
+  [system skills]
+  - backup.sh
+  - cron-error-monitor.sh
+  - end-of-day.sh
+  - iyeque-pdf-reader
+  - memory-log
+  - mlb-daily-scores
+  - morning-briefing.sh
+  - nightly-commit.sh
+  - ontology
+  - ontology-sync-meta.sh
+  - ontology-sync.sh
+  - openclaw-update.sh
+  - pdf-extract
+  - projects-index.sh
+  - project-tracker
+  - reminder
+  - rfq-analyzer
+  - secret-checker.sh
+  - self-improvement
+  - self-improving-agent
+  - skill-vetter
+  - sow
+  - summarize
+  - update-check.sh
+  - weekly-evolver.sh
+  - weekly-maintenance.sh
+  - workspace-backup.sh
+
+**RFQ shared_folder check:**
+  ✓ 25-67725 - Ford Plasma Cells: 5 file(s)
+  ✓ 25-72998 - MBUSI Gluing Cell: 6 file(s)
+  ✓ 25-72313 - Ford FRAP Mega Cell: 1 file(s)
+  ✓ 25-71662 - Ford Cobot Projects: 8 file(s)
+  ✓ 24-68775 - Metalsa Frame Wax: 1 file(s)
+
+**Status:** 1 issue(s) found ⚠️
