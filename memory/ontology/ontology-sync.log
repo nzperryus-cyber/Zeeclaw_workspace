@@ -463,3 +463,49 @@ SYNC: 9 upserted, 0 errors
 No sessions found for yesterday
 [2026-04-06 06:05] === Ontology Sync Started ===
 No sessions found for yesterday
+[2026-04-06 12:00] === Meta→Ontology Sync Started ===
+[2026-04-06 12:00] Found 9 project meta.md files
+[2026-04-06 12:00] UPSERT proj_24_68775: quoting | Metalsa
+[2026-04-06 12:00] UPSERT proj_25_67725: quoting | Ford
+[2026-04-06 12:00] UPSERT proj_25_71662: sent | Ford (VOSS standards)
+[2026-04-06 12:00] UPSERT proj_25_72313: quoting | Ford
+[2026-04-06 12:00] UPSERT proj_25_72998: quoting | ?
+[2026-04-06 12:00] UPSERT proj_25_73050: mothballed | Stellantis
+[2026-04-06 12:00] UPSERT proj_25_73287: quoting | MBUSI
+[2026-04-06 12:00] UPSERT proj_25_73403: quoting | Ford
+[2026-04-06 12:00] UPSERT proj_26_73415: quoting | Tesla
+[2026-04-06 12:00] Meta→Ontology Sync: 9 upserted, 0 errors
+SYNC: 9 upserted, 0 errors
+[2026-04-06 12:00] === Meta→Ontology Sync Complete ===
+[2026-04-06 14:35] === Meta→Ontology Sync Started ===
+[2026-04-06 14:35] Found 0 project meta.md files
+[2026-04-06 14:35] Meta→Ontology Sync: 0 upserted, 0 errors
+[2026-04-06 14:35] === Meta→Ontology Sync Complete ===
+[2026-04-06 14:36] === Meta→Ontology Sync Started ===
+[2026-04-06 14:36] Found 9 project .md files
+[2026-04-06 14:36] UPSERT proj_24_68775: quoting | Metalsa
+[2026-04-06 14:36] UPSERT proj_25_67725: quoting | Ford
+[2026-04-06 14:36] UPSERT proj_25_71662: sent | Ford (VOSS standards)
+[2026-04-06 14:36] UPSERT proj_25_72313: quoting | Ford
+[2026-04-06 14:36] UPSERT proj_25_72998: quoting | MBUSI
+[2026-04-06 14:36] UPSERT proj_25_73050: mothballed | Stellantis
+[2026-04-06 14:36] UPSERT proj_25_73287: quoting | MBUSI
+[2026-04-06 14:36] UPSERT proj_25_73403: quoting | Ford
+[2026-04-06 14:36] UPSERT proj_26_73415: quoting | Tesla
+[2026-04-06 14:36] Meta→Ontology Sync: 9 upserted, 0 errors
+[2026-04-06 14:36] === Meta→Ontology Sync Complete ===
+[2026-04-06 14:55] === Meta→Ontology Sync Started ===
+[2026-04-06 14:55] Found 9 project .md files
+[2026-04-06 14:55] UPSERT proj_24_68775: quoting | Metalsa
+[2026-04-06 14:55] UPSERT proj_25_67725: quoting | Ford
+[2026-04-06 14:55] UPSERT proj_25_71662: sent | Ford (VOSS standards)
+[2026-04-06 14:55] UPSERT proj_25_72313: quoting | Ford
+[2026-04-06 14:55] UPSERT proj_25_72998: quoting | MBUSI
+[2026-04-06 14:55] UPSERT proj_25_73050: mothballed | Stellantis
+[2026-04-06 14:55] UPSERT proj_25_73287: quoting | MBUSI
+[2026-04-06 14:55] UPSERT proj_25_73403: quoting | Ford
+[2026-04-06 14:55] UPSERT proj_26_73415: quoting | Tesla
+[2026-04-06 14:55] Meta→Ontology Sync: 9 upserted, 0 errors
+[2026-04-06 14:55] === Meta→Ontology Sync Complete ===
+[2026-04-06 23:00] === Ontology Sync Started ===
+No sessions found for yesterday
